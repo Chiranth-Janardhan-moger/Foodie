@@ -78,12 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
      RESEND EMAIL
   ========================== */
 
-  function resendEmail() {
-    const email = localStorage.getItem('resetEmail');
-    if (email) {
-      alert(`Reset link resent to ${email}`);
-    }
+  async function sendResetEmail(email) {
+  try {
+    const response = await fetch('/api/auth/forgot-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!response.ok) throw new Error('Request failed');
+    return true;
+  } catch (err) {
+    console.error('Failed to send reset email:', err);
+    alert('Something went wrong. Please try again.');
+    return false;
   }
+}
 
   /* =========================
      SWITCH BACK TO FORM
