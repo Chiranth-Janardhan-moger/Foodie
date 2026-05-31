@@ -70,8 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('successMessage').classList.add('active');
     document.getElementById('sentEmail').textContent = email;
 
-    // Save email for resend
-    localStorage.setItem('resetEmail', email);
+    setupResendButton(email); // email passed directly, no localStorage
   }
 
   /* =========================
