@@ -307,55 +307,8 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const html = document.documentElement;
-            const themeToggles = document.querySelectorAll('.theme-toggle');
             const mobileMenuBtn = document.querySelector(".hamberger");
             const mobileMenu = document.querySelector(".mobile-menu");
-
-            // Initial theme setting is now handled by the inline script in the head.
-            // This script only updates the icon and sets up event listeners.
-
-            // Update ALL theme toggle icons
-            function updateThemeIcon() {
-                themeToggles.forEach(toggle => {
-                    const icon = toggle.querySelector('i');
-                    if (html.getAttribute('data-theme') === 'dark') {
-                        icon.style.transform = 'rotate(360deg) scale(0)';
-                        setTimeout(() => {
-                            icon.className = 'fa-solid fa-sun';
-                            icon.style.transform = 'rotate(0deg) scale(1)';
-                        }, 250);
-                    } else {
-                        icon.style.transform = 'rotate(-360deg) scale(0)';
-                        setTimeout(() => {
-                            icon.className = 'fa-solid fa-moon';
-                            icon.style.transform = 'rotate(0deg) scale(1)';
-                        }, 250);
-                    }
-                });
-            }
-
-            updateThemeIcon(); // Call once on load to set initial icon
-
-            // Add event listener to ALL theme toggles
-            themeToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const currentTheme = html.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                    html.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('theme', newTheme);
-                    updateThemeIcon();
-                });
-            });
-
-            // Mobile menu toggle
-            mobileMenuBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                mobileMenu.classList.toggle("mobile-menu-active");
-                const icon = mobileMenuBtn.querySelector("i");
-                icon.classList.toggle("fa-bars");
-                icon.classList.toggle("fa-xmark");
-            });
 
             // Close mobile menu when clicking outside
             document.addEventListener("click", (e) => {
@@ -419,3 +372,4 @@
 </body>
 
 </html>
+

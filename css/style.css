@@ -1,11 +1,21 @@
     @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wdth,wght@87.5,600&display=swap');
 
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Roboto Condensed";
-    }
+    html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer container styling */
+.footer-container {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-block: 0.1rem; /* further reduced for compact footer */
+}
 
     :root {
         /* Light theme (default) */
@@ -62,11 +72,14 @@
     }
 
     [data-theme="dark"] .social-media {
-        background-color: var(--text-secondary) !important;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(242, 189, 18, 0.25);
     }
 
     [data-theme="dark"] .social-media:hover {
-        background-color: var(--gold-finger) !important;
+        background: rgba(242, 189, 18, 0.15);
+        border-color: #F2BD12;
+        box-shadow: 0 0 12px rgba(242, 189, 18, 0.35);
     }
 
     [data-theme="dark"] .btn:hover {
@@ -84,22 +97,12 @@
         color: var(--bg-primary);
     }
 
-    body {
-        background-color: var(--eye-ball);
-        color: var(--lead);
-        transition: background-color 0.4s ease, color 0.4s ease;
-        overflow-x: hidden;
+    [data-theme="dark"] .feedback-fab:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(242, 189, 18, 0.65);
+    background: #FFD700;
+    color: #1A1A1A;
     }
-
-    /* Dark mode overrides */
-    body.dark-mode {
-        --lead: #E0E0E0;
-        --eye-ball: #1c1c1c;
-        --hint-yellow: #4b3b00;
-        --pure-white: #2c2c2c;
-        --gold-finger: #ffca28;
-        background-color: var(--eye-ball);
-        color: var(--lead);
     }
 
     .theme-toggle {
@@ -189,8 +192,8 @@
     }
 
     .mt-one {
-        margin-top: 1.5rem;
-    }
+    margin-top: 0.1rem;
+}
 
     .m-auto {
         margin: auto;
@@ -270,7 +273,7 @@
             display: none !important;
         }
         .desktop-action .hamberger {
-            display: block !important;
+            display: flex !important;
         }
     }
 
@@ -510,6 +513,10 @@
         font-size: 1.5rem;
         display: none;
         cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
     }
 
     .desktop-action .hamberger i {
@@ -1153,7 +1160,7 @@
         }
 
         .desktop-action .hamberger {
-            display: block;
+            display: flex;
         }
 
         .desktop-action {
@@ -1274,7 +1281,7 @@
 
         /* FOOTER PART STYLING */
         .footer-wrapper .media {
-            margin-top: 2rem;
+            margin-top: 0.2rem;
         }
 
         /* Navbar mobile adjustments */
@@ -2760,6 +2767,14 @@
 .floating-feedback-btn i {
     font-size: 1rem;
     writing-mode: horizontal-tb;  /* icon stays upright */
+}
+
+.text-center .fa-solid,
+.feature-icon .fa-solid,
+.mission-icon .fa-solid,
+.team-photo .fa-solid {
+  color: #f57418f8;
+  border: 2px solid #f4b400;
 }
 
 /* Responsive: shrink on mobile */
