@@ -17,6 +17,15 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+body,
+p, h1, h2, h3, h4, h5, h6,
+a, li, span, label, small,
+input, textarea, select, button {
+    color: var(--text-primary) !important;
 }
 
 [data-theme="dark"] {
