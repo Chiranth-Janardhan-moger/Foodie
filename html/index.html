@@ -170,19 +170,19 @@
 </header>
 
     <div id="offlineMessage"
-        style="display: none; max-width: 500px; margin: 40px auto; padding: 20px; text-align: center; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+        style="display: none; max-width: 500px; margin: 40px auto; padding: 20px; text-align: center; background: var(--bg-secondary); color: var(--text-primary); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
         <div style="font-size: 48px; color: #ff4444; margin-bottom: 15px;">
             <i class="fa-solid fa-wifi-slash"></i>
         </div>
-<h3 style="font-size: 24px; color: #333; margin-bottom: 10px;" data-i18n="errors.noInternet">No Internet Connection</h3>
-        <p style="color: #666; margin-bottom: 20px; line-height: 1.5;">
+<h3 style="font-size: 24px; color: var(--text-primary); margin-bottom: 10px;" data-i18n="errors.noInternet">No Internet Connection</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.5;">
 <span data-i18n="errors.offlineLoad">We can't load the content right now. Please check your connection.</span>
         </p>
 <button id="retryButton" style="background: #ff6b6b; color: white; border: none; padding: 12px 24px; 
                        border-radius: 6px; cursor: pointer; font-size: 16px; transition: all 0.3s;">
             <i class="fa-solid fa-sync"></i> <span data-i18n="errors.retry">Try Again</span>
         </button>
-        <div id="retryStatus" style="margin-top: 15px; color: #666; font-size: 14px;"></div>
+        <div id="retryStatus" style="margin-top: 15px; color: var(--text-secondary); font-size: 14px;"></div>
     </div>
 
     <main>
