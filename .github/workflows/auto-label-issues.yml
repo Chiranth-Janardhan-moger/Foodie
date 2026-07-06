@@ -27,7 +27,7 @@ jobs:
               });
             } catch (error) {
               // 422 means the label already exists, which is safe to ignore
-              if (error.status !== 422) {
+              if (error.status !== 422 && error.response?.status !== 422) {
                 throw error;
               }
             }
